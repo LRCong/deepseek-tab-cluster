@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "智能标签页分组",
+  "version": "1.0",
+  "description": "使用 DeepSeek 智能分组标签页",
+  "permissions": [
+    "tabs",
+    "storage",
+    "tabGroups"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

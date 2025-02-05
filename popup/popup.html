@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>标签页分组管理器</title>
+  <style>
+    body {
+      width: 400px;
+      max-height: 600px;
+      padding: 16px;
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    .button-container {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+    
+    button:hover {
+      background: #f5f5f5;
+    }
+    
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    
+    #status {
+      margin-bottom: 16px;
+      color: #666;
+    }
+    
+    .group {
+      margin-bottom: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .group-header {
+      padding: 12px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .group-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    
+    .group-description {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .tabs-container {
+      padding: 8px;
+    }
+    
+    .tab-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+    
+    .tab-item:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .tab-favicon {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    
+    .tab-title {
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .settings {
+      margin-bottom: 16px;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background: #f5f5f5;
+    }
+    
+    .settings input {
+      width: 100%;
+      padding: 8px;
+      margin: 4px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .settings label {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .error {
+      color: #d32f2f;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="settings">
+    <label for="apiKey">DeepSeek API Key</label>
+    <input type="password" id="apiKey" placeholder="请输入 DeepSeek API Key">
+    <div id="apiKeyError" class="error"></div>
+  </div>
+  <div class="button-container">
+    <button id="analyzeButton" disabled>分析标签页</button>
+    <button id="applyButton" disabled>应用分组</button>
+    <button id="refresh-button">刷新</button>
+  </div>
+  <div id="status"></div>
+  <div id="groups-container"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
